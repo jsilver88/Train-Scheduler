@@ -51,6 +51,34 @@ $(document).ready(function(){
 
     console.log(name, number, destination, time, frequency);
 
+    var frequency = parseInt(frequency);
+    var currentTime = moment();
+
+    console.log(moment().format('HHmm'));
+
+    var convertDate = moment(childSnapshot.val().time, 'HHmm').subtract(1, 'years');
+    console.log(convertDate);
+
+    var trainTime = moment(convertDate).format('HHmm');
+    console.log(trainTime);
+
+    var convertTime = moment(trainTime, 'HHmm').subtract(1, 'years');
+    var difference = moment().diff(moment(convertTime), 'minutes');
+
+    console.log(difference);
+
+    var timeLeft = difference & frequency;
+
+    console.log(timeLeft);
+
+    var nextTrain = frequency - timeLeft;
+
+    console.log(nextTrain);
+
+    var trainArrival = moment(). add(nextTrain, 'minutes');
+
+    console.log(moment(trainArrival).format('HHmm'));
+
 
   })
 
