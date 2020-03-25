@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #cccccc;
+}
+
+h1{
+    color: black;
+}
+
+th {
+    text-align: center;
+}
+
+.wrapper {
+    background-color: #ffffff;
+    padding: 0;
+    border-radius: 0 0 1% 1%;
+}
+
+
+.submit {
+    background-color: #076ba9;
+}
+
+.reset {
+    background-color: #076ba9;
+}
