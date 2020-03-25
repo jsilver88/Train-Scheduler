@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!--Styling-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!--jQuery-->
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+    <!--moment.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+    <!--Firebase-->
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+
+      <!-- TODO: Add SDKs for Firebase products that you want to use -->
+          <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-database.js"></script>
+
+    <title>Train Scheduler</title>
+</head>
+<body>
+    <div class="container wrapper">
+        <header>
+            <div class="container">
+                <div class="jumbotron header">
+                    <h1>Train Scheduler</h1>
+                </div>
+            </div>
+        </header>
+
+        <div class="container main-section">
+            <div class="row main-row">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 trainScheduler">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3>Train Schedule</h3>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-hover table-responsive" id="boardTable">
+                                <thead>
+                                    <tr>
+                                        <th>Train Name</th>
+                                        <th>Train #</th>
+                                        <th>Destination</th>
+                                        <th>Frequency (in min.)</th>
+                                        <th>Next Arrival</th>
+                                        <th>Minutes Away</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="boardInput"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                    <div class="col-xs-12 col-sm-12 cols-md-4 col-lg-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4>Add Train</h4>
+                            </div>
+                            <div class="panel-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="trainName">Train Name</label>
+                                        <input type="text" class="formControl" id="name" placeholder="Enter Name of Train">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="trainNumber">Train #</label>
+                                        <input type="text" class="formControl" id="number" placeholder="Enter Train #">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="trainDestination">Destination</label>
+                                        <input type="text" class="formControl" id="destination" placeholder="City/State">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="trainTime">First Train Time (24HR)</label>
+                                        <input type="text" class="formControl" id="time" placeholder="e.g.1400">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="trainFrequency">Frequency (in min.)</label>
+                                        <input type="text" class="formControl" id="frequency" placeholder="e.g 10 minutes">
+                                    </div>
+                                </form>
+                                <button class="btn btn-primary submit">Submit</button>
+                                <button class="btn btn-primary reset">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="/javascript/logic.js"></script>
+</body>
+</html>
