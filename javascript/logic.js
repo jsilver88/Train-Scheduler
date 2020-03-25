@@ -79,8 +79,14 @@ $(document).ready(function(){
 
     console.log(moment(trainArrival).format('HHmm'));
 
+    var trainArrivalDisplay = moment(trainArrival).format('HHmm');
 
-  })
+    $('#boardInput').append(
+        '<tr><td id="name-display">' + childSnapshot.val().name + '<td id="number-display">' + childSnapshot.val().number + '<td id="destination-display">' +childSnapshot.val().destination + '<td id="frequency-display">' + childSnapshot.val().frequency + '<td id="train-arrival-display">' + trainArrivalDisplay + '<td id="next-train">' + nextTrain + 'minutes until arrival' + '</td></tr>'
+    );
+
+
+  });
 
 
 
