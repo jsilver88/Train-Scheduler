@@ -16,6 +16,7 @@ $(document).ready(function(){
   var database = firebase.database();
 
   $('.submit').on('click', function(event) {
+      event.preventDefault();
 
     var nameInput = $('#name').val().trim();
     var numberInput = $('#number').val().trim();
@@ -82,12 +83,15 @@ $(document).ready(function(){
     var trainArrivalDisplay = moment(trainArrival).format('HHmm');
 
     $('#boardInput').append(
-        '<tr><td id="name-display">' + childSnapshot.val().name + '<td id="number-display">' + childSnapshot.val().number + '<td id="destination-display">' +childSnapshot.val().destination + '<td id="frequency-display">' + childSnapshot.val().frequency + '<td id="train-arrival-display">' + trainArrivalDisplay + '<td id="next-train">' + nextTrain + 'minutes until arrival' + '</td></tr>'
+        '<tr><td id="name-display">' + childSnapshot.val().name + '<td id="number-display">' + childSnapshot.val().number + '<td id="destination-display">' +childSnapshot.val().destination + '<td id="frequency-display">' + childSnapshot.val().frequency + '<td id="train-arrival-display">' + trainArrivalDisplay + '<td id="next-train">' + nextTrain + '</td></tr>'
     );
 
 
   });
 
+  $('.reset').on('click', function(event) {
+      location.reload();
+  });
 
 
 })
